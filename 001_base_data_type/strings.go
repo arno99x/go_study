@@ -5,6 +5,9 @@ import (
 	"unicode/utf8"
 )
 
+func init() {
+	fmt.Println("init strings.go")
+}
 func main() {
 	testMaxNoRepateStrLeng()
 }

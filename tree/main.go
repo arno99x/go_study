@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"go_study/005_function/treenode/node"
+	"go_study/tree/node"
 	"strconv"
 )
 
@@ -34,16 +34,35 @@ func buildTree() node.Node {
 	return tree
 }
 
+func traverseWithChan(tree node.Node) chan *node.Node {
+	out := make(chan *node.Node)
+	go func() {
+		tree.Do(func(n *node.Node) {
+			out <- n
+		})
+		close(out)
+	}()
+
+	return out
+}
+
 func main() {
 	tree := buildTree()
+
 	count := 0
 	tree.Do(func(n *node.Node) {
 		count++
 		fmt.Println("count : " + strconv.Itoa(count))
 	})
 
-	tree.Do(func(n *node.Node) {
+	out := traverseWithChan(tree)
 
-		fmt.Println("value : " + strconv.Itoa(n.Value))
-	})
+	maxNode := 0
+	for c := range out {
+		if c.Value > maxNode {
+			maxNode = c.Value
+		}
+	}
+	fmt.Println("maxNode : ", maxNode)
+
 }

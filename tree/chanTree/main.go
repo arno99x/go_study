@@ -1,10 +1,12 @@
 package main
 
 import (
-	"go_study/005_function/treenode/node"
+	"fmt"
+	"go_study/tree/node"
+	"strconv"
 )
 
-func BuildTree() node.Node {
+func buildTree() node.Node {
 	var tree node.Node
 	tree.Value = 0
 
@@ -34,5 +36,21 @@ func BuildTree() node.Node {
 
 func main() {
 	tree := buildTree()
-	tree.Do()
+
+	count := 0
+	tree.Do(func(n *node.Node) {
+		count++
+		fmt.Println("count : " + strconv.Itoa(count))
+	})
+
+	outChan := tree.DoWithChan()
+
+	maxValue := 0
+	for c := range outChan {
+		if maxValue < c.Value {
+			maxValue = c.Value
+		}
+	}
+	fmt.Println("max value is ", maxValue)
+
 }

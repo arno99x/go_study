@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"go_study/crawler_single/engine"
+	"go_study/crawler_concurrence/engine"
 	"regexp"
 )
 

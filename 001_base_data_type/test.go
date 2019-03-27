@@ -12,6 +12,9 @@ func main() {
 	_bool()
 }
 
+func init() {
+	fmt.Println("init test.go")
+}
 func _bool() {
 	fmt.Println("------bool test----------------------")
 	var equal bool

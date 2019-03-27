@@ -6,6 +6,9 @@ import (
 	"go_study/crawler_single/fetcher"
 )
 
+func init() {
+	fmt.Println("init .go")
+}
 func Run(seeds ...Request) {
 	var requests []Request
 	for _, r := range seeds {

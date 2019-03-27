@@ -15,3 +15,15 @@ func (node Node) Do(f func(n *Node)) {
 		node.RightNode.Do(f)
 	}
 }
+
+func (node Node) DoWithChan() chan *Node {
+	out := make(chan *Node)
+	go func() {
+		node.Do(func(n *Node) {
+			out <- n
+		})
+		close(out)
+	}()
+
+	return out
+}
