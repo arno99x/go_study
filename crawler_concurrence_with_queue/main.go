@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"go_study/crawler_concurrence/engine"
-	"go_study/crawler_concurrence/scheduler"
-	"go_study/crawler_concurrence/zhenai/parser"
+	"go_study/crawler_concurrence_with_queue/engine"
+	"go_study/crawler_concurrence_with_queue/scheduler"
+	"go_study/crawler_concurrence_with_queue/zhenai/parser"
 )
 
 func init() {
@@ -12,8 +12,8 @@ func init() {
 }
 func main() {
 	e := engine.ConcurrenceEngine{
-		Scheduler: &scheduler.SimpleSchedule{},
-		WorkCount: 10,
+		Scheduler: &scheduler.QueueScheduler{},
+		WorkCount: 100,
 	}
 
 	e.Run(

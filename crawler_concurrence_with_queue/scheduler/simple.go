@@ -1,6 +1,6 @@
 package scheduler
 
-import "go_study/crawler_concurrence/engine"
+import "go_study/crawler_concurrence_with_queue/engine"
 
 type SimpleSchedule struct {
 	workChan chan engine.Request
