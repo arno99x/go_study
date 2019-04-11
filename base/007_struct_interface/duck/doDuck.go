@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"go_study/007_struct_interface/duck/green"
-	"go_study/007_struct_interface/duck/yellow"
+	"go_study/base/007_struct_interfacerface/duck/green"
+	"go_study/base/007_struct_interfacerface/duck/yellow"
 )
 
 type Duck interface {

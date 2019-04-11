@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"go_study/007_struct_interface/animal/animal_type/dog"
-	"go_study/007_struct_interface/animal/animal_type/fish"
-	"go_study/007_struct_interface/animal/country/china"
-	"go_study/007_struct_interface/animal/country/english"
+	"go_study/base/007_struct_interfacerface/animal/animal_type/dog"
+	"go_study/base/007_struct_interfacerface/animal/animal_type/fish"
+	"go_study/base/007_struct_interfacerface/animal/country/china"
+	"go_study/base/007_struct_interfacerface/animal/country/english"
 )
 
 type Animal interface {
