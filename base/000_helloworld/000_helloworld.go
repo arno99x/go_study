@@ -4,6 +4,7 @@ package main
 //导入需要使用的包
 import (
 	"fmt" //支持格式化输出的包,就是format的简写
+	"os"
 )
 
 //主函数,程序执行入口
@@ -14,4 +15,5 @@ func main() {
 	*/
 
 	fmt.Println("hello world")
+	fmt.Println("*** " + os.Getenv("PATH"))
 }
